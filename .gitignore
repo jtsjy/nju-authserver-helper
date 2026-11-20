@@ -1,0 +1,17 @@
+# Private keys and packed extension artifacts
+*.pem
+*.crx
+*.key
+*.pfx
+*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Dependencies / temporary files
+node_modules/
+_tmp/

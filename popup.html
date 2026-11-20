@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NJU 统一认证助手</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">
+      <img src="icons/icon48.png" alt="" class="brand-icon">
+      <div>
+        <h1>NJU 统一认证助手</h1>
+        <p>自动登录并完成滑块验证</p>
+      </div>
+    </div>
+    <div class="status" id="status">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusText">检查当前页面…</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <label class="field">
+        <span class="label-text">学号 / 工号</span>
+        <input id="username" type="text" autocomplete="username" spellcheck="false" placeholder="输入统一身份认证账号">
+      </label>
+
+      <label class="field">
+        <span class="label-text">密码</span>
+        <div class="password-row">
+          <input id="password" type="password" autocomplete="current-password" placeholder="输入密码">
+          <button id="togglePwd" class="eye" type="button" title="显示密码" aria-label="显示密码">显示</button>
+        </div>
+      </label>
+
+      <div class="options">
+        <label class="switch-row" id="rowRemember">
+          <span>保存密码</span>
+          <input id="rememberPassword" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+        <label class="switch-row" id="rowAutoFill">
+          <span>自动登录</span>
+          <input id="autoFill" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+        <label class="switch-row" id="rowSolver">
+          <span>自动完成滑块</span>
+          <input id="solver" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+        <label class="switch-row" id="rowSilent">
+          <span>静默完成滑块</span>
+          <input id="silent" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="save" class="primary" type="button">保存设置</button>
+      <button id="fillNow" class="secondary" type="button">按设置立即执行</button>
+    </div>
+
+    <div class="sub-actions">
+      <button id="openLogin" class="link" type="button">打开登录页</button>
+      <button id="clear" class="link danger" type="button">清除已保存信息</button>
+    </div>
+
+    <p class="flow" id="flow">当前：全自动（自动登录 + 静默滑块）</p>
+    <p class="engine" id="engine">滑块接管：检查中…</p>
+    <p class="hint">密码仅存本机、不上传；只在私人电脑勾选保存密码。</p>
+    <p class="feedback" id="feedback" aria-live="polite"></p>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
